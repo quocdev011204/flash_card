@@ -1,49 +1,63 @@
-# Ứng dụng Flashcards
+# Flashcards App
 
-Ứng dụng flashcards hiện đại, tối giản, xây bằng Vite + React.
+A modern, minimalist flashcards application built with **Vite + React**.
 
-## Công nghệ sử dụng
-- Vite (React) cho tốc độ phát triển/build nhanh
-- React 18 (hooks)
-- CSS thuần, responsive, hỗ trợ sáng/tối
-- LocalStorage để lưu dữ liệu cục bộ
+## Technologies Used
 
-## Chức năng
-- Quản lý thẻ: thêm, sửa, xóa (lưu vào trình duyệt)
-- Chế độ Học: lật thẻ, dùng chung thứ tự xáo trộn
-- Chế độ Làm bài:
-  - Trắc nghiệm (4 lựa chọn) có thanh tiến độ, kết quả, Làm lại, Ôn câu sai
-  - Tự luận (nhập đáp án) chấm ngay, có kết quả, Làm lại, Ôn câu sai
-- Chuyển đổi giao diện Sáng/Tối, hiển thị đẹp trên mobile, không tràn giao diện
+* **Vite (React)** for fast development and build times
+* **React 18 (Hooks)** for clean, component-based logic
+* **Pure CSS**, fully responsive, supports light/dark themes
+* **LocalStorage** for saving user data locally
 
-## Cách chạy
-1. Cài đặt phụ thuộc:
+## Features
+
+* **Flashcard Management:** Add, edit, and delete cards (saved in browser)
+* **Study Mode:** Flip cards to learn, supports shuffle order
+* **Quiz Mode:**
+
+  * Multiple choice (4 options) with progress bar, results, Retry, and Review Incorrect
+  * Written answers (type your response) with instant grading, results, Retry, and Review Incorrect
+* **Theme Toggle:** Switch between Light/Dark mode
+* **Responsive Design:** Works beautifully on mobile without overflow issues
+
+## How to Run
+
+1. Install dependencies:
+
 ```bash
 npm install
 ```
-2. Chạy môi trường phát triển:
+
+2. Start development server:
+
 ```bash
 npm run dev
 ```
-3. Build sản phẩm:
+
+3. Build for production:
+
 ```bash
 npm run build
 ```
-4. Xem thử bản build:
+
+4. Preview the production build:
+
 ```bash
 npm run preview
 ```
 
-## Cấu trúc chính
-- `src/App.jsx`: trạng thái ứng dụng, điều phối chế độ học/thi
-- `src/components/CardList.jsx`: CRUD thẻ + chọn hình thức làm bài
-- `src/components/StudyMode.jsx`: học bằng lật thẻ
-- `src/components/QuizMode.jsx`: làm bài trắc nghiệm
-- `src/components/WrittenMode.jsx`: làm bài tự luận
-- `src/App.css`: giao diện (biến, theme, responsive)
-- `src/index.css`: nền tảng bố cục, ổn định cuộn trang
+## Project Structure
 
-## Ghi chú
-- Dữ liệu thẻ lưu ở LocalStorage key `flashcards`
-- Giao diện lưu ở LocalStorage key `theme`
-- Dễ tùy biến màu sắc trong `:root` ở `src/App.css`
+* `src/App.jsx`: Main app logic, handles app state and mode switching
+* `src/components/CardList.jsx`: Card CRUD operations and quiz mode selection
+* `src/components/StudyMode.jsx`: Flashcard study mode
+* `src/components/QuizMode.jsx`: Multiple-choice quiz mode
+* `src/components/WrittenMode.jsx`: Written-answer quiz mode
+* `src/App.css`: Main styling (variables, theme, responsive design)
+* `src/index.css`: Base layout and scroll behavior
+
+## Notes
+
+* Flashcard data is stored in LocalStorage under key `flashcards`
+* Theme preference is stored in LocalStorage under key `theme`
+* Color themes and variables can be easily customized in `:root` inside `src/App.css`
